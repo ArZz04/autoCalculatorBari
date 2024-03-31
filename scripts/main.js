@@ -1,15 +1,14 @@
-
 import { BurgerCalculatorHistory } from './History.js';
 import { Burger } from './Burger.js';
 import { modalDiv } from './variables.js';
 
 const calculationHistory = new BurgerCalculatorHistory();
   
-  // Define the calcular function
+// Define la función para calcular
 function calculate() {
-    // Crear una instancia de la clase Burger
+    // Crea una instancia de la clase Burger
     const burger = new Burger();
-    // Obtener los valores de los campos de entrada
+    // Obtiene los valores de los campos de entrada
     const quantity = document.getElementById("meat").value;
   
     burger.setMeat(quantity);
@@ -33,16 +32,20 @@ function closeModal() {
     modalContainer.innerHTML = '';
 }
 
-const btnCloseModal = document.getElementById("btn-close-modal");
-if (btnCloseModal) {
-    btnCloseModal.addEventListener("click", () => {
-        closeModal();
-    });
-}
+// Verifica los botones cuando se hace clic en cualquier parte del documento
+document.addEventListener('click', () => {
+    const btnCloseModal = document.getElementById("btn-close-modal");
+
+    if (btnCloseModal) {
+        btnCloseModal.addEventListener("click", () => closeModal());
+    }
+});
 
 const btnAction = document.getElementById("btn-calculate");
 
-btnAction.addEventListener("click", () => {
-    calculate();
-    openModal(event);
-});
+if (btnAction) {
+    btnAction.addEventListener("click", () => {
+        calculate();
+        openModal(event);
+    });
+}
