@@ -40,7 +40,6 @@ if (btnCloseModal) {
     });
 }
 
-
 const btnAction = document.getElementById("btn-calculate");
 
 btnAction.addEventListener("click", () => {
