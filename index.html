@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>CALCULADORA BARI</title>
         <script src="https://cdn.tailwindcss.com"></script>
+        <script type="module" src="./scripts/main.js"></script>
     </head>
     <body>
         <main class="h-screen">
@@ -17,7 +18,7 @@
                 <div class="mx-auto max-w-2xl lg:max-w-4xl">
                     <img class="mx-auto h-36" src="res/logo.png" alt />
                     <div class="mt-10">
-                        <blockquote
+                         <blockquote
                             class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
                             <p>CALCULADORA DE BARI</p>
                         </blockquote>
@@ -69,7 +70,8 @@
                                             Cancelar
                                         </button>
                                         <button
-                                            onclick="calculate()"
+                                            type="button"
+                                            id="btn-calculate"
                                             class="rounded-md bg-red-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-900">
                                             Calcular
                                         </button>
@@ -79,10 +81,13 @@
                             </div>
 
                         </form>
+
+                        <modal id="modal-box"> 
+                            
+                        </modal>
                     </div>
                 </div>
             </section>
         </main>
     </body>
-    <script src="script.js"></script>
 </html>
