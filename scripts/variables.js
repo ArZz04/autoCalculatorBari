@@ -7,7 +7,7 @@ const ingredients = burger.getIngredients();
 
 export const designDiv = `
 <div class="burger-ingredients">
-    <div class="flex justify-center text-base sm:text-xl gap-16 p-6">
+    <div class="flex justify-center text-base sm:text-xl gap-14 p-5">
         <ul class="">
             <li><span class="font-semibold">Carne: </span>${ingredients.Carne}</li>
             <li><span class="font-semibold">Zanahoria: </span>${ingredients.Zanahoria}</li>
