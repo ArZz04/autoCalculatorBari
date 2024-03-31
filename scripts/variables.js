@@ -7,7 +7,7 @@ const ingredients = burger.getIngredients();
 
 export const designDiv = `
 <div class="burger-ingredients">
-    <div class="flex justify-center text-xl gap-16 p-6">
+    <div class="flex justify-center text-lg sm:text-xl gap-16 p-6">
         <ul class="">
             <li><span class="font-semibold">Carne: </span>${ingredients.Carne}</li>
             <li><span class="font-semibold">Zanahoria: </span>${ingredients.Zanahoria}</li>
@@ -39,7 +39,7 @@ export const modalDiv = `
             </svg>
                 </div>
                 <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                    <h3 class="text-3xl text-center font-semibold text-gray-900" id="modal-title">INGREDIENTES</h3>
+                    <h3 class="text-xl text-center font-semibold text-gray-900 sm:text-2xl" id="modal-title">INGREDIENTES</h3>
                     <div class="mt-2">
                         ${designDiv}
                     </div>
