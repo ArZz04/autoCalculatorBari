@@ -1,47 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>CALCULADORA BARI</title>
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
-        <header class="bg-gray-200">
-            <div class="flex justify-center pt-10">
-                <img class="h-32" src="./res/logo.png" alt>
-            </div>
-        </header>
+        <main class="h-screen">
+            <section
+                class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8 h-screen">
+                <div
+                    class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20"></div>
+                <div
+                    class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
+                <div class="mx-auto max-w-2xl lg:max-w-4xl">
+                    <img class="mx-auto h-36" src="res/logo.png" alt />
+                    <div class="mt-10">
+                        <blockquote
+                            class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+                            <p>CALCULADORA DE BARI</p>
+                        </blockquote>
+                        <form>
+                            <div class="border-b border-gray-900/10 pb-12">
+                                <h2
+                                    class="text-base font-semibold leading-7 text-gray-900">HAMBURGUESA</h2>
 
-        <main class="bg-gray-200 h-screen">
-            <div class="grid grid-cols-1 grid-flow-rows md:grid-cols-2 gap-16 p-16">
-                <div id="box-input" class="bg-red-950 rounded-md text-white grid grid-rows-4 grid-cols-1 gap-2 p-4">
-                    <div class="flex justify-center">
-                        <h1 class="font-bold text-2xl">CALCULADORA DE HAMBURGUESA</h1>
-                    </div>
-                    <div>
-                        <label for="password" class="font-semibold">Contraseña:</label>
-                        <input type="password" id="password" name="password" placeholder="4 DIGITOS" class="text-red-950 border rounded-md border-red-900 p-2 w-full">
-                    </div>
-                    <div>
-                        <label for="quantity" class="font-semibold">Cantidad de Carne:</label>
-                        <input type="text" id="quantity" name="quantity" placeholder="KG" class="text-red-950 border rounded-md border-red-900 p-2 w-full">
-                    </div>
-                    <div class="flex justify-center">
-                        <button onclick="calcular()" class="bg-white w-1/4 h-2/3 font-bold text-red-950 rounded-md place-self-center">Calcular</button>
+                                <div
+                                    class="mt-2 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                                    <div class="sm:col-span-3">
+                                        <label for="username"
+                                            class="block text-sm font-medium leading-6 text-gray-900">Usuario:</label>
+                                        <div class="mt-2">
+                                            <input type="text" name="username"
+                                                id="username"
+                                                autocomplete="username"
+                                                class="block pl-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                        </div>
+                                    </div>
+
+                                    <div class="sm:col-span-3">
+                                        <label for="password"
+                                            class="block text-sm font-medium leading-6 text-gray-900">Contraseña:</label>
+                                        <div class="mt-2">
+                                            <input type="password"
+                                                name="password" id="password"
+                                                autocomplete="current-password"
+                                                class="block pl-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                        </div>
+                                    </div>
+
+                                    <div class="sm:col-span-4">
+                                        <label for="meat"
+                                            class="block text-sm font-medium leading-6 text-gray-900">Carne:</label>
+                                        <div class="mt-2">
+                                            <input id="meat" name="meat"
+                                                type="text"
+                                                autocomplete="input-meat"
+                                                placeholder="KG"
+                                                class="block pl-2 w-1/2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="mt-6 flex items-center justify-end gap-x-6">
+                                        <button
+                                            type="button"
+                                            class="text-sm font-semibold leading-6 text-gray-900">
+                                            Cancelar
+                                        </button>
+                                        <button
+                                            onclick="calculate()"
+                                            class="rounded-md bg-red-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-900">
+                                            Calcular
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </form>
                     </div>
                 </div>
-                <div class="hidden md:block opacity-0 md:opacity-100">
-                    <div class="bg-red-950 rounded-md text-white grid grid-rows-4 grid-cols-1 gap-2 p-4">
-                        <div class="flex justify-center">
-                            <h1 class="font-bold text-2xl">MEDIDAS CALCULADAS</h1>
-                        </div>
-                        <div id="calculations" class="flex">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </section>
         </main>
     </body>
     <script src="script.js"></script>
