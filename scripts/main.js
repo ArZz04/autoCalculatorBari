@@ -1,8 +1,10 @@
 import { BurgerCalculatorHistory } from './History.js';
 import { Burger } from './Burger.js';
-import { modalDiv } from './variables.js';
+import { getModalDiv } from './variables.js';
 
 const calculationHistory = new BurgerCalculatorHistory();
+
+let result = '';
   
 // Define la función para calcular
 function calculate() {
@@ -10,13 +12,11 @@ function calculate() {
     const burger = new Burger();
     // Obtiene los valores de los campos de entrada
     const quantity = document.getElementById("meat").value;
-  
     burger.setMeat(quantity);
-  
     calculationHistory.addCalculation(burger);
-  
+    result = burger.getIngredients();
     const historyList = calculationHistory.getHistory();
-  
+    console.log(result);
     console.log(historyList);
 }
 
@@ -24,7 +24,7 @@ function openModal(event) {
     event.preventDefault();
 
     const modalContainer = document.querySelector('#modal-box');
-    modalContainer.innerHTML = modalDiv;
+    modalContainer.innerHTML = getModalDiv(result);
 }
 
 function closeModal() {
