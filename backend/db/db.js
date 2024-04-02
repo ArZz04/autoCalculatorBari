@@ -1,6 +1,6 @@
 const { MongoClient } = require('mongodb');
 
-const uri = "mongodb+srv://admin-scripts:arzz00@db-cluster.etzrbpp.mongodb.net/?retryWrites=true&w=majority&appName=db-cluster";
+const uri = "";
 
 // Crear una instancia del cliente MongoDB
 const client = new MongoClient(uri);
